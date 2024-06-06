@@ -39,6 +39,14 @@ function displayMountains(mountains, filterParams) {
         <p>Location: ${mountain.location.latitude}, ${mountain.location.longitude}</p>
         <p>Country: ${mountain.country}</p>
         <p>Range: ${mountain.range}</p>`;
+
+      // Creating an anchor tag for details
+      let anchor = document.createElement("a");
+      anchor.href = `app/details.html?mountainId=${mountain.name}}`; // Assume each mountain's index as its ID
+      anchor.text = "See details";
+      anchor.style.marginTop = "10px";
+      div.appendChild(anchor);
+
       container.appendChild(div);
     });
   }
